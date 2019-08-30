@@ -1,17 +1,34 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<ActionBar title="Uncorked" class="action-bar">
-    <!-- <StackLayout orientation="horizontal" horizontalAlignment="left" class="action-bar-custom">
-        <Label class="fas" horizontalAlignment="left" text="&#xf095;"></Label>
-        <Label class="fas" horizontalAlignment="right" text="&#xf095;"></Label>
-    </StackLayout> -->
-
-    <ActionItem tap="onProfile"
-      ios.systemIcon="9" ios.position="left" 
-      android.systemIcon="ic_menu_share" android.position="actionBar"></ActionItem>
-  <ActionItem tap="onClick"
-      ios.systemIcon="16" ios.position="right"
-      text="delete" android.position="popup"></ActionItem>
+<ActionBar title="Home" class="action-bar">
+    <ActionItem tap="onProfile" ios.position="left" android.position="actionBar" text="Profile"></ActionItem>
+    <ActionItem tap="onClick" ios.position="right" android.position="actionBar" text="Favs"></ActionItem>
 </ActionBar>
-<StackLayout  class="p-20">
-    <Label text="Welcome to the app..." class="h1 text-center" textWrap="true"></Label>
+
+<StackLayout>
+    <Tabs selectedIndex="1">
+        <!-- The bottom tab UI is created via TabStrip (the containier) and TabStripItem (for each tab)-->
+        <TabStrip>
+            <TabStripItem class="tab-item" title="Style"></TabStripItem>
+            <TabStripItem class="tab-item" title="Type"></TabStripItem>
+            <TabStripItem class="tab-item" title="Appearance"></TabStripItem>
+        </TabStrip>
+
+        <!-- The number of TabContentItem components should corespond to the number of TabStripItem components -->
+        <TabContentItem>
+            <GridLayout>
+                <Label text="Style" class="h2 text-center"></Label>
+            </GridLayout>
+        </TabContentItem>
+        <TabContentItem>
+            <GridLayout>
+                <Label text="Type" class="h2 text-center"></Label>
+            </GridLayout>
+        </TabContentItem>
+        <TabContentItem>
+            <GridLayout>
+                <Label text="Appearance" class="h2 text-center"></Label>
+            </GridLayout>
+        </TabContentItem>
+
+    </Tabs>
 </StackLayout>
